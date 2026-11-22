@@ -1,0 +1,48 @@
+[project]
+name = "placement-prep-agent"
+version = "0.1.0"
+description = "AI agent that researches a company's hiring process, analyses your resume and builds a personalised placement prep plan, practice questions and mock interviews."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.6.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.3.9",
+    "langchain-ollama>=0.2.1",
+    "ddgs>=9.0.0",
+    "tavily-python>=0.5.0",
+    "httpx>=0.28.1",
+    "requests>=2.31.0",
+    "markdownify>=0.11.0",
+    "pypdf>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "colorama>=0.4.6; platform_system == 'Windows'",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.36.0"]
+searxng = ["langchain-community>=0.3.9"]
+dev = ["pytest>=8.0.0", "ruff>=0.6.1", "mypy>=1.11.1"]
+
+[project.scripts]
+placement-prep = "placement_prep_agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=73.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["placement_prep_agent"]
+
+[tool.setuptools.package-dir]
+"placement_prep_agent" = "src/placement_prep_agent"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 110
+lint.select = ["E", "F", "I", "UP"]
+lint.ignore = ["E501", "UP006", "UP007", "UP035"]

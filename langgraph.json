@@ -1,0 +1,9 @@
+{
+  "graphs": {
+    "placement_prep": "./src/placement_prep_agent/graph.py:graph",
+    "mock_interview": "./src/placement_prep_agent/interview.py:graph"
+  },
+  "python_version": "3.11",
+  "env": "./.env",
+  "dependencies": ["."]
+}

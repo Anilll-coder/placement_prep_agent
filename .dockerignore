@@ -1,0 +1,8 @@
+.env
+.venv
+.git
+__pycache__
+*.egg-info
+.langgraph_api
+reports
+tests

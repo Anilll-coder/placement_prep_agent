@@ -1,0 +1,22 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# langgraph / app output
+.langgraph_api/
+reports/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
